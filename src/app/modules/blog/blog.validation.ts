@@ -16,7 +16,7 @@ const updateBlogValidationSchema = z.object({
   }),
 });
 
-export const productValidations = {
+export const blogValidations = {
   createBlogValidationSchema,
   updateBlogValidationSchema,
 };
