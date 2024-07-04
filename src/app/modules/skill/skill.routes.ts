@@ -1,5 +1,4 @@
 import { NextFunction, Request, Response, Router } from "express";
-import requestValidator from "../../middlewares/requestValidator";
 import auth from "../../middlewares/auth";
 import { SkillControllers } from "./skill.controllers";
 import { fileUploader } from "../../utils/fileUploader";
