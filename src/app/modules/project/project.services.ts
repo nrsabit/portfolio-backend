@@ -5,7 +5,7 @@ import { fileUploader } from "../../utils/fileUploader";
 
 // creating a new project
 const createProjectService = async (req: Request) => {
-  const data: TProject = req.body;
+  const data: TProject = req.body.body;
 
   if (req?.file) {
     const image = await fileUploader.uploadToCloudinary(req?.file.buffer);

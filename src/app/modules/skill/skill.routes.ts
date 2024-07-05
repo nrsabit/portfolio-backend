@@ -15,9 +15,9 @@ router.post(
   auth(),
   fileUploader.upload.single("file"),
   (req: Request, res: Response, next: NextFunction) => {
-    req.body = skillValidations.createSkillValidationSchema.parse(
-      JSON.parse(req.body.data)
-    );
+    req.body = skillValidations.createSkillValidationSchema.parse({
+      body: JSON.parse(req.body.data),
+    });
     return SkillControllers.createSkillController(req, res, next);
   }
 );

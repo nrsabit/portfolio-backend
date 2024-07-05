@@ -19,9 +19,9 @@ router.post(
   auth(),
   fileUploader.upload.single("file"),
   (req: Request, res: Response, next: NextFunction) => {
-    req.body = projectValidations.createProjectValidationSchema.parse(
-      JSON.parse(req.body.data)
-    );
+    req.body = projectValidations.createProjectValidationSchema.parse({
+      body: JSON.parse(req.body.data),
+    });
     return ProjectControllers.createProjectController(req, res, next);
   }
 );

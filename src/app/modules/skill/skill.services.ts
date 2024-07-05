@@ -5,7 +5,7 @@ import { fileUploader } from "../../utils/fileUploader";
 
 // creating a new skill
 const createSkillService = async (req: Request) => {
-  const data: TSkill = req.body;
+  const data: TSkill = req.body.body;
 
   if (req?.file) {
     const image = await fileUploader.uploadToCloudinary(req?.file.buffer);
